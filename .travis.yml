@@ -1,0 +1,6 @@
+jobs:
+  include:
+    - state: test
+      script:
+        - echo Travis1 >> test.txt
+        - cat test.txt
