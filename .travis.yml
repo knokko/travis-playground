@@ -1,6 +1,11 @@
 jobs:
   include:
-    - stage: test
+    - stage: test-linux
       script:
         - echo $TRAVIS_OS_NAME >> test.txt
         - cat test.txt
+    - stage: test-windows
+      script:
+        - echo $TRAVIS_OS_NAME >> test.txt
+        - cat test.txt
+      os: windows
