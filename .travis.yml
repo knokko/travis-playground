@@ -1,11 +1,13 @@
 jobs:
   include:
     - stage: test-linux
+      language: rust
       script:
         - echo $TRAVIS_OS_NAME >> test.txt
         - cat test.txt
     - stage: test-windows
+      os: windows
+      language: rust
       script:
         - echo $TRAVIS_OS_NAME >> test.txt
         - cat test.txt
-      os: windows
