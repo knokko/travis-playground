@@ -4,7 +4,7 @@ deploy:
   github_token: "IGguQHtkWklHUcmuchHprgqNQRXQT1p0YVdkjOWaAk1Rq4lkRNoJt87DBQdR82ziRyMOxzq7VBBz8GoS1qFDqp7MXDM0uXHRhEmK0CjSFniJsIkhfSw1rktf1U0Lic5zW2ZizHu2ykqP10UE7YBtd32JQzWdGq928aLKBeJn9Ax+bR3a2yxhVn/SGC/SU35+hTfScL8r52en+rykdMQ1u5lsCt2esyQiXXA0AuXr8iIX3/6p54G+9zzygLRZnfA+iojIiCbGYXfruYjr1iy7d9gPuOxRwfA7w7A6Yi11qVefQFAgC67OHPQKruJ6zhEosHDuEyn7sOoPmO1VBT8I3ZkoZZItS4nmLR73Z31NyiNGLi4wa+CoUcFphATIjbpkzeNAp2z09qacT/y/RnjJiPTlXWnBRzIBaBKLfGuP4KRDKBxoetXuB1Lu30JIVpiM+s8d7tPcpCxNi7A4S+xjMPQvV+9ATG2hSAnqeAhDja6CmOBCgRenvjgF2tlczFe+ARY+/w+F9GM+zh9elTSHT/j0sPki4VILAf6QBSoigVwg9Q+PNgkcxfJCC2KLTAdUOe7eSWVdB33ILhMO+gqgIzFSelTBT3D64hPAEb45UiLg55UcLLIpoaYqVDFltzo3B0RIkBSVHx4kMm+JC6HWLxUUIHf04DGoEGFlrSgBS5U="
   file: test.txt
   on:
-    tags: true
+    tags: false 
 
 jobs:
   include:
