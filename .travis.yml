@@ -1,6 +1,6 @@
 jobs:
   include:
-    - state: test
+    - stage: test
       script:
-        - echo Travis1 >> test.txt
+        - echo $TRAVIS_OS_NAME >> test.txt
         - cat test.txt
