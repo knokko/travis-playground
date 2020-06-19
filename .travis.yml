@@ -5,9 +5,13 @@ jobs:
       script:
         - echo $TRAVIS_OS_NAME >> test.txt
         - cat test.txt
+        - cargo build
+        - cargo test
     - stage: test-windows
       os: windows
       language: rust
       script:
         - echo $TRAVIS_OS_NAME >> test.txt
         - cat test.txt
+        - cargo build
+        - cargo test
