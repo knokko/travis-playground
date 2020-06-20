@@ -3,7 +3,9 @@ deploy:
   skip_cleanup: true
   api_key: 
     secure: "i7h9Y56dbBDTONtxeLl5CmXSpKhFg94P81jkroMnoDyHqagS9OvGTnAQDzruGnjELVKe5HMWEh2PGzWRsXBciaDSf1auBPAHl8aXFSDH66MYcnagt1MJiXPLcT9ykarVoP/8oS6/tvbk42TsBFF+vslEWROfquYA8rMR7YWbJIJj1GTTBeQt+X9R3pQBTGwTe4JOFrbMqNREADpcNEdtzS3dcx4ISfVAnn/thn05lx3ey/rfDU/jV4F/DQXKPXMKNM1iRTkhiQCWpLp33gWJEnDIrQxBbXhiJWXCerLUX3UIWwM1MbNKHtMo+M/+tzZxZeiS0XiVg3Ii+y5WE/nCtT+Qd6ZOLS1CsLqKVnJawoNySqa/Z7g3Hy8qjlJS3JmoIc7sfYQX+i1lOKxZX8mQSITNc6NNdfGNPUqZt0E0cNCjB96KJ1ypnGixuBwoUMKsCAPjx7BoUMQu0GnchDBhXKW0Tutn/XO5j1KdSkOeyGvs2Xgol1VF+XjLrtyMemYUc0nR9t7uxg29Qi1rHu+whkhnWPSQv6Pb5/F2g/fqci4VGzmXgqBa9GnnoIdnpnPSZYUi1viD/y4CsnYDUXvMOL0y6Zd16BrClZV/PEo/xx9eZC0mBbEct9DdFT5PWsECW6iIMYVyUHm1o+8PNyJ6jloLurjjB2e+x55aUwYIqNA="
-  file: testLinux.txt
+  file: 
+    - target/debug/travis-playground
+    - target/debug/travis-playground.exe
   on:
     tags: false 
 
