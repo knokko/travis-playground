@@ -21,10 +21,16 @@ jobs:
   - stage: test-windows
     os: windows
     language: rust
+    before_install:
+      - git clone https://github.com/pyenv-win/pyenv-win.git $HOME/.pyenv
+      - export PATH="$HOME/.pyenv/pyenv-win/bin:$HOME/.pyenv/pyenv-win/shims:$PATH"
+      - pyenv install -q 3.7.1
+      - pyenv rehash
+      - pyenv local 3.7.1
+      - python --version
     script:
     - echo $TRAVIS_OS_NAME >> testWindows.txt
     - cat testWindows.txt
-    - choco install -y python3
     - python --version
     - cargo build
     - cargo test
