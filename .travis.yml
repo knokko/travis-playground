@@ -24,5 +24,7 @@ jobs:
     script:
     - echo $TRAVIS_OS_NAME >> testWindows.txt
     - cat testWindows.txt
+    - choco install -y python3
+    - python --version
     - cargo build
     - cargo test
