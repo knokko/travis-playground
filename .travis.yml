@@ -4,8 +4,8 @@ deploy:
   api_key: 
     secure: "i7h9Y56dbBDTONtxeLl5CmXSpKhFg94P81jkroMnoDyHqagS9OvGTnAQDzruGnjELVKe5HMWEh2PGzWRsXBciaDSf1auBPAHl8aXFSDH66MYcnagt1MJiXPLcT9ykarVoP/8oS6/tvbk42TsBFF+vslEWROfquYA8rMR7YWbJIJj1GTTBeQt+X9R3pQBTGwTe4JOFrbMqNREADpcNEdtzS3dcx4ISfVAnn/thn05lx3ey/rfDU/jV4F/DQXKPXMKNM1iRTkhiQCWpLp33gWJEnDIrQxBbXhiJWXCerLUX3UIWwM1MbNKHtMo+M/+tzZxZeiS0XiVg3Ii+y5WE/nCtT+Qd6ZOLS1CsLqKVnJawoNySqa/Z7g3Hy8qjlJS3JmoIc7sfYQX+i1lOKxZX8mQSITNc6NNdfGNPUqZt0E0cNCjB96KJ1ypnGixuBwoUMKsCAPjx7BoUMQu0GnchDBhXKW0Tutn/XO5j1KdSkOeyGvs2Xgol1VF+XjLrtyMemYUc0nR9t7uxg29Qi1rHu+whkhnWPSQv6Pb5/F2g/fqci4VGzmXgqBa9GnnoIdnpnPSZYUi1viD/y4CsnYDUXvMOL0y6Zd16BrClZV/PEo/xx9eZC0mBbEct9DdFT5PWsECW6iIMYVyUHm1o+8PNyJ6jloLurjjB2e+x55aUwYIqNA="
   file: 
-    - target/debug/travis-playground
-    - target/debug/travis-playground.exe
+    - testLinux.txt
+    - testWindows.txt
   on:
     tags: false 
 
@@ -16,21 +16,15 @@ jobs:
     script:
     - echo $TRAVIS_OS_NAME >> testLinux.txt
     - cat testLinux.txt
-    - cargo build
-    - cargo test
   - stage: test-windows
     os: windows
     language: rust
     before_install:
-      - git clone https://github.com/pyenv-win/pyenv-win.git $HOME/.pyenv
-      - export PATH="$HOME/.pyenv/pyenv-win/bin:$HOME/.pyenv/pyenv-win/shims:$PATH"
-      - pyenv install -q 3.7.1
-      - pyenv rehash
-      - pyenv local 3.7.1
+      - choco install python3
+      - python --version
+      - rm /C/ProgramData/chocolatey/bin/python.exe
       - python --version
     script:
     - echo $TRAVIS_OS_NAME >> testWindows.txt
     - cat testWindows.txt
     - python --version
-    - cargo build
-    - cargo test
