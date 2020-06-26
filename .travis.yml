@@ -18,7 +18,6 @@ jobs:
       - cd /C/ProgramData/chocolatey/bin
       - ls
       - rm python.exe python2.exe python2.7.exe
-      - python --version
       - choco install python3
       - python --version
     script:
