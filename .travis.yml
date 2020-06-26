@@ -19,6 +19,8 @@ jobs:
       - ls
       - rm python.exe python2.exe python2.7.exe
       - choco install python3
+      - ls
+      - python3 --version
       - python --version
     script:
     - echo $TRAVIS_OS_NAME >> testWindows.txt
