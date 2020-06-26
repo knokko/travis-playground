@@ -15,7 +15,8 @@ jobs:
     language: rust
     before_install:
       - python --version
-      - choco uninstall python
+      - cd /C/ProgramData/chocolatey/bin
+      - ls -a
       - python --version
       - choco install python3
       - python --version
