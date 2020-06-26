@@ -10,7 +10,7 @@ deploy:
 
 jobs:
   include:
-    - stage: test-windows
+  - stage: test-windows
     os: windows
     language: rust
     before_install:
