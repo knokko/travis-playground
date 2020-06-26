@@ -22,12 +22,10 @@ jobs:
     os: windows
     language: rust
     before_install:
-      - git clone https://github.com/pyenv-win/pyenv-win.git $HOME/.pyenv
-      - export PATH="$HOME/.pyenv/pyenv-win/bin:$HOME/.pyenv/pyenv-win/shims:$PATH"
-      - pyenv install -q 3.7.1
-      - pyenv rehash
-      - pyenv local 3.7.1
-      - python --version
+    - cd /C/ProgramData/chocolatey/bin
+    - rm python.exe python2.exe python2.7.exe
+    - choco install python3
+    - cp C:/Python38/python.exe python.exe
     script:
     - echo $TRAVIS_OS_NAME >> testWindows.txt
     - cat testWindows.txt
