@@ -16,7 +16,8 @@ jobs:
     before_install:
       - python --version
       - cd /C/ProgramData/chocolatey/bin
-      - ls -a
+      - ls
+      - rm python.exe python2.exe python2.7.exe
       - python --version
       - choco install python3
       - python --version
