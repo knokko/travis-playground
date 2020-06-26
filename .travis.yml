@@ -20,9 +20,10 @@ jobs:
     os: windows
     language: rust
     before_install:
-      - choco install python3
       - python --version
-      - rm /C/ProgramData/chocolatey/bin/python.exe
+      - choco uninstall python
+      - python --version
+      - choco install python3
       - python --version
     script:
     - echo $TRAVIS_OS_NAME >> testWindows.txt
