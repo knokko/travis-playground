@@ -21,8 +21,8 @@ jobs:
       - choco install python3
       - cd C:/Python38
       - ls
-      - python3 --version
       - python --version
+      - cp python.exe /C/ProgramData/chocolatey/bin/python.exe
     script:
     - echo $TRAVIS_OS_NAME >> testWindows.txt
     - cat testWindows.txt
