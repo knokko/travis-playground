@@ -19,6 +19,7 @@ jobs:
       - ls
       - rm python.exe python2.exe python2.7.exe
       - choco install python3
+      - cd C:/Python38
       - ls
       - python3 --version
       - python --version
