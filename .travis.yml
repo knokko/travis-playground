@@ -33,5 +33,5 @@ jobs:
     - echo $TRAVIS_OS_NAME >> testWindows.txt
     - cat testWindows.txt
     - python --version
-    - cargo build
-    - cargo test
+    - cargo build --verbose
+    - cargo test --verbose
