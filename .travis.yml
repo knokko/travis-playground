@@ -22,10 +22,13 @@ jobs:
     os: windows
     language: rust
     before_install:
+    - export "PrevDir=$PWD"
     - cd /C/ProgramData/chocolatey/bin
     - rm python.exe python2.exe python2.7.exe
     - choco install python3
-    - cp C:/Python38/python.exe python.exe
+    - export "PATH=/c/Python38:$PATH"
+    - cd "$PrevDir"
+    - python --version
     script:
     - echo $TRAVIS_OS_NAME >> testWindows.txt
     - cat testWindows.txt
