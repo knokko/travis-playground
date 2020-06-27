@@ -16,7 +16,7 @@ jobs:
     script:
     - echo $TRAVIS_OS_NAME >> testLinux.txt
     - cat testLinux.txt
-    - cargo build
+    - cargo build --verbose
     - cargo test
   - stage: test-windows
     os: windows
