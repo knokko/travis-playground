@@ -15,16 +15,11 @@ jobs:
     language: rust
     before_install:
       - python --version
-      - echo "Start directory is $PWD"
       - export "PrevDir=$PWD"
-      - echo "PrevDir=$PrevDir"
       - cd /C/ProgramData/chocolatey/bin
-      - ls
       - rm python.exe python2.exe python2.7.exe
       - choco install python3
-      - echo "Old path is $PATH"
       - export "PATH=/c/Python38:$PATH"
-      - echo "New path is $PATH"
       - cd "$PrevDir"
       - python --version
     script:
