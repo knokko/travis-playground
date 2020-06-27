@@ -23,9 +23,8 @@ jobs:
       - rm python.exe python2.exe python2.7.exe
       - choco install python3
       - echo "Old path is $PATH"
-      - export "PATH=C:/Python38:$PATH"
+      - export "PATH=/c/Python38:$PATH"
       - echo "New path is $PATH"
-      - python --version
       - cd "$PrevDir"
       - python --version
     script:
