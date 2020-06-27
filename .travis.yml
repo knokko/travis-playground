@@ -16,13 +16,18 @@ jobs:
     before_install:
       - python --version
       - echo "Start directory is $PWD"
+      - export "PrevDir=$PWD"
+      - echo "PrevDir=$PrevDir"
       - cd /C/ProgramData/chocolatey/bin
       - ls
       - rm python.exe python2.exe python2.7.exe
       - choco install python3
-      - cd C:/Python38
-      - ls
-      - cp python.exe /C/ProgramData/chocolatey/bin/python.exe
+      - echo "Old path is $PATH"
+      - export "PATH=C:/Python38:$PATH"
+      - echo "New path is $PATH"
+      - python --version
+      - cd "$PrevDir"
+      - python --version
     script:
     - echo $TRAVIS_OS_NAME >> testWindows.txt
     - cat testWindows.txt
