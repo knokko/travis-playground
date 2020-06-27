@@ -16,7 +16,7 @@ jobs:
     script:
     - echo $TRAVIS_OS_NAME >> testLinux.txt
     - cat testLinux.txt
-    - cargo build --verbose
+    - travis_wait cargo build --verbose
     - cargo test
   - stage: test-windows
     os: windows
@@ -33,5 +33,5 @@ jobs:
     - echo $TRAVIS_OS_NAME >> testWindows.txt
     - cat testWindows.txt
     - python --version
-    - cargo build --verbose
-    - cargo test --verbose
+    - travis_wait cargo build --verbose
+    - cargo test 
