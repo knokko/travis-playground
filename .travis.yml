@@ -15,6 +15,7 @@ jobs:
     language: rust
     before_install:
       - python --version
+      - echo "Start directory is $PWD"
       - cd /C/ProgramData/chocolatey/bin
       - ls
       - rm python.exe python2.exe python2.7.exe
